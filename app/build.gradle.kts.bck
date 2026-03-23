@@ -1,0 +1,135 @@
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
+}
+
+android {
+    namespace = "com.abang.prayerzones"
+    compileSdk = 36
+
+    defaultConfig {
+        applicationId = "com.abang.prayerzones"
+        minSdk = 24
+        targetSdk = 36
+        versionCode = 1
+        versionName = "1.0"
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+        isCoreLibraryDesugaringEnabled = true
+
+    }
+    // For Kotlin projects
+    kotlinOptions {
+        //jvmTarget = "1.8"
+
+        buildFeatures {
+            compose = true
+            viewBinding = true
+        }
+    }
+// Add this block to configure Kotlin compiler options
+    kotlin {
+        jvmToolchain(11) // Or your desired JVM version as an Int
+    }
+
+
+    val navVersion = "2.9.3" // Using latest stable from search result [1]
+
+
+    dependencies {
+        implementation("androidx.core:core-ktx:1.10.1")
+        implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
+        implementation("androidx.activity:activity-compose:1.7.2")
+        implementation("androidx.compose.ui:ui:1.5.0")
+        implementation("androidx.compose.ui:ui-tooling-preview:1.5.0")
+        implementation("androidx.compose.material3:material3:1.2.1")
+
+        implementation("androidx.navigation:navigation-fragment-ktx:${navVersion}")
+        implementation("androidx.navigation:navigation-ui-ktx:${navVersion}")
+        implementation("androidx.navigation:navigation-compose:${navVersion}")
+
+        // ViewModel + State
+        implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
+
+        // Retrofit + Moshi (for Azan API)
+        implementation("com.squareup.retrofit2:retrofit:2.9.0")
+        implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
+
+        // Coroutines
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+
+        // MediaPlayer for azan playback
+        implementation("androidx.media:media:1.6.0")
+
+        // Debugging
+        implementation("androidx.compose.ui:ui-tooling:1.5.0")
+        implementation("androidx.compose.ui:ui-test-manifest:1.5.0")
+
+        implementation("com.squareup.retrofit2:converter-gson:2.12.0")
+
+// Extended Material Icons for Compose (gives you MoreHoriz, Explore, Schedule, Place, Settings, etc.)
+        implementation("androidx.compose.material:material-icons-extended")
+        // Base Material icons (Notifications, NotificationsOff, etc.)
+        implementation("androidx.compose.material:material-icons-core")
+
+// Extended Material icons (MoreHoriz, Explore, Schedule, Settings, etc.)
+        implementation("androidx.compose.material:material-icons-extended")
+        implementation(libs.androidx.foundation)
+
+
+        // Correct way to declare coreLibraryDesugaring dependency
+        coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4") // Or the latest version
+
+        // ... other dependencies
+
+        // ... other dependencies
+        implementation("androidx.compose.material3:material3:1.2.1") // Or your M3 version
+
+        // Core Material icons (includes Filled, Outlined, Rounded, Sharp, TwoTone)
+        implementation("androidx.compose.material:material-icons-core:1.6.7") // Use the latest stable version
+
+        // For a wider selection of icons, including some less common ones:
+        implementation("androidx.compose.material:material-icons-extended:1.6.7") // Use the latest stable version
+
+        implementation("androidx.compose.material3:material3:1.2.1") // Or your M3 version
+
+        // Core Material icons (includes Filled, Outlined, Rounded, Sharp, TwoTone styles)
+        // NotificationsOff is typically in here.
+        implementation("androidx.compose.material:material-icons-core:1.6.7") // Use the latest stable version
+
+        // For a wider selection of icons (good to have if you use many diverse icons)
+        implementation("androidx.compose.material:material-icons-extended:1.6.7") // Use the latest stable version
+        coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4") // Check for the latest version
+
+        // ... other dependencies
+        implementation("androidx.compose.material:material-icons-core:1.6.0") // Or the latest version
+        implementation("androidx.compose.material:material-icons-extended:1.6.0")
+        implementation("androidx.compose.runtime:runtime-livedata:1.6.6") // Or the latest version
+
+        // Feature module Support (optional, if you have feature modules)
+        // implementation("androidx.navigation:navigation-dynamic-features-fragment:$navVersion")
+
+        // Testing Navigation (optional)
+        // androidTestImplementation("androidx.navigation:navigation-testing:$navVersion")
+
+        // Jetpack Compose Integration (optional, if you were using Compose for UI)
+        // implementation("androidx.navigation:navigation-compose:$navVersion")
+
+    }
+
+}

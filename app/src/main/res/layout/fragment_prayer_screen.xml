@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"> <!-- CRUCIAL for weights -->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"> <!-- Takes full height due to fillViewport -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- SECTION 1: Header Info - Included Layout -->
+        <!-- This FrameLayout wrapper gets the weight -->
+        <FrameLayout
+            android:id="@+id/section1_wrapper"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="65"> <!-- Approx. 65-68% -->
+            <include
+                android:id="@+id/section1_header_content"
+                layout="@layout/fragment_main_prayer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/> <!-- Fill the weighted FrameLayout -->
+        </FrameLayout>
+
+        <!-- SECTION 3: Daily Prayer Times List -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/prayer_times_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="35"
+            android:nestedScrollingEnabled="false"
+            android:paddingVertical="8dp"
+            tools:listitem="@layout/item_prayer_time"/>
+
+
+        <!-- Other sections are wrap_content or have fixed/min heights -->
+        <!-- They will take the space they need, and the weights above apply to the REMAINDER -->
+
+        <FrameLayout
+            android:id="@+id/section4_additional_info_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:minHeight="80dp"> <!-- Min height for this section -->
+            <TextView
+                android:id="@+id/tvJummahInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/jummah_additional_info_placeholder"
+                android:textAppearance="?attr/textAppearanceBody1"/>
+        </FrameLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs_main_screen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabMode="fixed"
+            app:tabGravity="fill"/>
+
+        <FrameLayout
+            android:id="@+id/section5_footer_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+        <ImageView
+            android:id="@+id/ivSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:src="@drawable/ic_settings_placeholder"
+            android:contentDescription="@string/content_description_settings" />
+    </FrameLayout>
+</LinearLayout>
+
+<ProgressBar
+android:id="@+id/progress_bar_loading"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_gravity="center"
+android:visibility="gone"
+tools:visibility="visible"/>
+    </FrameLayout>
+    </androidx.core.widget.NestedScrollView>
+

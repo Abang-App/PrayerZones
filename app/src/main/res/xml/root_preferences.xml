@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- NOTIFICATIONS & SOUNDS CATEGORY                                    -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <PreferenceCategory
+        android:title="Notifications &amp; Sounds"
+        android:icon="@android:drawable/ic_lock_silent_mode_off"
+        app:iconSpaceReserved="true">
+
+        <!-- Navigate to detailed notification settings -->
+        <Preference
+            android:key="pref_notifications_detail"
+            android:title="Audio &amp; Voice Settings"
+            android:summary="Configure prayer notifications and sounds for all mosques"
+            android:icon="@android:drawable/ic_lock_silent_mode_off"
+            app:iconSpaceReserved="true" />
+
+        <!-- System notification channel shortcut -->
+        <Preference
+            android:key="pref_open_notification_settings"
+            android:title="System Notification Settings"
+            android:summary="Manage notifs in Android settings"
+            android:icon="@android:drawable/ic_menu_preferences"
+            app:iconSpaceReserved="true" />
+
+    </PreferenceCategory>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- LOCATION & MOSQUES CATEGORY                                      -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <PreferenceCategory
+        android:title="Location &amp; Mosques"
+        android:icon="@android:drawable/ic_menu_mylocation"
+        app:iconSpaceReserved="true">
+
+        <!-- GPS Auto-update for Slot 0 -->
+        <SwitchPreferenceCompat
+            android:key="pref_gps_auto_update"
+            android:title="Auto-Update Nearest Mosque"
+            android:summaryOn="Slot 1 auto-updates via GPS "
+            android:summaryOff="Slot 1 is manually locked"
+            android:defaultValue="true"
+            android:icon="@android:drawable/ic_menu_mylocation"
+            app:iconSpaceReserved="true" />
+
+        <!-- Location permission status -->
+        <Preference
+            android:key="pref_location_permission"
+            android:title="Location Permission"
+            android:summary="Tap to grant location access"
+            android:icon="@android:drawable/ic_menu_compass"
+            app:iconSpaceReserved="true" />
+
+        <!-- Manage mosque slots (navigates to existing screen) -->
+        <Preference
+            android:key="pref_manage_mosques"
+            android:title="Manage Mosque Slots"
+            android:summary="Add, remove, swap mosques in 4 slots"
+            android:icon="@android:drawable/ic_menu_edit"
+            app:iconSpaceReserved="true" />
+
+        <!-- Auto In-Mosque Mode: prayer window before/after prayer -->
+        <ListPreference
+            android:key="pref_near_prayer_time"
+            android:title="Prayer Window (In-Mosque Mode)"
+            android:summary="%s before and after prayer"
+            android:entries="@array/near_prayer_time_entries"
+            android:entryValues="@array/near_prayer_time_values"
+            android:defaultValue="25"
+            android:icon="@android:drawable/ic_menu_recent_history"
+            app:iconSpaceReserved="true"
+            app:useSimpleSummaryProvider="false" />
+
+        <!-- Auto In-Mosque Mode: minimum distance to trigger -->
+        <ListPreference
+            android:key="pref_min_distance_mosque"
+            android:title="Proximity Threshold (In-Mosque Mode)"
+            android:summary="%s — triggers mode when inside this radius"
+            android:entries="@array/min_distance_mosque_entries"
+            android:entryValues="@array/min_distance_mosque_values"
+            android:defaultValue="30"
+            android:icon="@android:drawable/ic_menu_compass"
+            app:iconSpaceReserved="true"
+            app:useSimpleSummaryProvider="false" />
+
+        <!-- Auto In-Mosque Mode: volume reduction percentage for Lower Volume mode -->
+        <ListPreference
+            android:key="pref_lower_volume_percent"
+            android:title="Lower Volume Percentage"
+            android:summary="%s — volume level for Lower Volume mode"
+            android:entries="@array/lower_volume_percent_entries"
+            android:entryValues="@array/lower_volume_percent_values"
+            android:defaultValue="15"
+            android:icon="@android:drawable/ic_lock_silent_mode"
+            app:iconSpaceReserved="true"
+            app:useSimpleSummaryProvider="false" />
+
+    </PreferenceCategory>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- APP APPEARANCE CATEGORY                                              -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <PreferenceCategory
+        android:title="App Appearance"
+        android:icon="@android:drawable/ic_menu_view"
+        app:iconSpaceReserved="true">
+
+        <!-- Theme selection -->
+        <ListPreference
+            android:key="pref_theme"
+            android:title="Theme"
+            android:summary="%s"
+            android:entries="@array/theme_entries"
+            android:entryValues="@array/theme_values"
+            android:defaultValue="system"
+            android:icon="@android:drawable/ic_menu_day"
+            app:iconSpaceReserved="true"
+            app:useSimpleSummaryProvider="true" />
+
+        <!-- Font scaling -->
+        <SeekBarPreference
+            android:key="pref_font_scale"
+            android:title="Font Size"
+            android:summary="Adjust text size throughout the app"
+            android:max="150"
+            android:min="80"
+            android:defaultValue="100"
+            android:icon="@android:drawable/ic_menu_zoom"
+            app:iconSpaceReserved="true"
+            app:showSeekBarValue="true" />
+
+        <!-- 12/24 hour format -->
+        <SwitchPreferenceCompat
+            android:key="pref_24_hour_format"
+            android:title="24-Hour Time Format"
+            android:summaryOn="Using 24h format (e.g 19:30)"
+            android:summaryOff="Using 12h format (e.g 7:30 PM)"
+            android:defaultValue="true"
+            android:icon="@android:drawable/ic_menu_recent_history"
+            app:iconSpaceReserved="true" />
+
+    </PreferenceCategory>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- ADVANCED CATEGORY                                                -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <PreferenceCategory
+        android:title="Advanced"
+        android:icon="@android:drawable/ic_menu_preferences"
+        app:iconSpaceReserved="true">
+
+        <!-- Battery optimization -->
+        <Preference
+            android:key="pref_battery_optimization"
+            android:title="Battery Optimization"
+            android:summary="Ensure alarms work reliably"
+            android:icon="@android:drawable/ic_lock_idle_charging"
+            app:iconSpaceReserved="true" />
+
+        <!-- Exact alarm permission -->
+        <Preference
+            android:key="pref_exact_alarms"
+            android:title="Exact Alarm Permission"
+            android:summary="Required for precise prayer notifications"
+            android:icon="@android:drawable/ic_menu_recent_history"
+            app:iconSpaceReserved="true" />
+
+        <!-- Cache management -->
+        <Preference
+            android:key="pref_clear_cache"
+            android:title="Clear Prayer Time Cache"
+            android:summary="Force refresh of all prayer times"
+            android:icon="@android:drawable/ic_menu_delete"
+            app:iconSpaceReserved="true" />
+
+
+    </PreferenceCategory>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- FRIDAY PRAYER SETTINGS CATEGORY                                 -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <PreferenceCategory
+        android:title="Local Friday Mode"
+        android:icon="@android:drawable/ic_menu_today"
+        app:iconSpaceReserved="true">
+
+        <SwitchPreferenceCompat
+            android:key="pref_prioritize_jumuah"
+            android:title="Prioritize Jumu'ah Notification"
+            android:summary="When times differ, play Azan for Jumua instead of Duhr."
+            android:defaultValue="true"
+            app:iconSpaceReserved="true" />
+
+    </PreferenceCategory>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- ABOUT CATEGORY                                                   -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <PreferenceCategory
+        android:title="About"
+        android:icon="@android:drawable/ic_menu_info_details"
+        app:iconSpaceReserved="true">
+
+        <!-- App version -->
+        <Preference
+            android:key="pref_version"
+            android:title="Version"
+            android:summary="PrayerZones 2.82"
+            android:icon="@android:drawable/ic_menu_info_details"
+            app:iconSpaceReserved="false" />
+
+        <!-- Privacy policy -->
+        <Preference
+            android:key="pref_privacy_policy"
+            android:title="Privacy Policy"
+            android:summary="View our privacy policy"
+            android:icon="@android:drawable/ic_menu_view"
+            app:iconSpaceReserved="true" />
+
+        <!-- Support Development -->
+        <Preference
+            android:key="pref_support_development"
+            android:title="☕ Support Development"
+            android:summary="Buy me a coffee — help keep this app ad-free"
+            android:icon="@android:drawable/ic_menu_send"
+            app:iconSpaceReserved="true" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

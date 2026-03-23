@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/prayerScreenFragment">
+
+    <!-- NOTE: This app is fully Jetpack Compose. This nav_graph.xml is a legacy
+         placeholder retained for the Navigation component dependency only.
+         Real navigation is handled by AppNavGraph.kt in Compose. -->
+    <fragment
+        android:id="@+id/prayerScreenFragment"
+        android:name="androidx.preference.PreferenceFragmentCompat"
+        android:label="PrayerScreen"
+        tools:layout="@layout/fragment_prayer_screen" />
+
+</navigation>

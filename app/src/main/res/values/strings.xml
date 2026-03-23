@@ -1,0 +1,78 @@
+﻿<resources>
+    <!-- Your Existing strings -->
+    <string name="app_name">PrayerZones</string>
+    <string name="allow">Allow</string>
+    <string name="not_now">Not Now</string>
+    <string name="notification_permission_title">Enable Prayer Notifications</string>
+    <string name="notification_permission_message">To receive prayer time notifications, please allow notifications for this app.</string>
+    <string name="exact_alarm_permission_title">Enable Exact Prayer Alarms</string>
+    <string name="exact_alarm_permission_message">To ensure accurate prayer time reminders, please allow exact alarms for this app.</string>
+
+    <!-- Your Cities Array -->
+    <string-array name="cities">
+        <item>Jakarta</item>
+        <item>Singapore</item>
+        <item>Istanbul</item>
+        <item>London</item>
+        <item>New York</item>
+        <item>Makkah</item>
+        <item>Madina</item>
+        <item>Cairo</item>
+        <item>Paris</item>
+        <item>Dubai</item>
+    </string-array>
+
+    <!-- NEW Strings for formatting and status messages (from previous suggestion) -->
+    <!-- For displaying the next prayer and its time -->
+    <string name="next_prayer_time_format">%1$s at %2$s (%3$s)</string>
+    <string name="countdown_cleared" />
+
+    <!-- For countdown timer text -->
+    <string name="countdown_format">%02d:%02d:%02d</string>
+    <string name="prayer_time_now">It\'s prayer time!</string>
+
+    <!-- Error and status messages -->
+    <string name="error_fetching_times">Error fetching times</string>
+    <string name="failed_to_connect">Failed to connect</string>
+    <string name="failed_with_code">Failed: %1$s</string> <!-- For HTTP error code or general error message -->
+    <string name="could_not_determine_next_prayer">Could not determine next prayer.</string>
+    <string name="error_parsing_time">Error parsing time data</string>
+    <string name="network_or_data_error">Network or data error</string>
+    <string name="select_city_country_known">Please select a city and ensure country is known.</string>
+    <string name="country_not_defined_warning">Country for %1$s not explicitly defined. API call might fail or be inaccurate.</string>
+
+    <!-- Log message formats (optional to put in strings.xml, but good for consistency if some parts might be user-facing or for easier review) -->
+    <string name="api_error_log">API Error for %1$s, %2$s: %3$s - %4$s</string>
+    <string name="network_error_log">API/Network Error for %1$s, %2$s: %3$s</string>
+    <string name="failed_to_determine_next_prayer_log">Failed to determine next prayer for %1$s, %2$s</string>
+    <string name="failed_to_parse_time_log">Failed to parse time string \'%1$s\' for %2$s</string>
+    <string name="failed_to_parse_fajr_log">Failed to parse Fajr time string \'%1$s\' for next day</string>
+    <string name="default_city_not_found">Default city \'%1$s\' not found in list.</string>
+    <string name="error_generic">Error: %1$s</string>
+    <string name="country_not_found_for_default_city">Could not determine country for default city: %1$s</string>
+
+    <!-- Add these for your bottom navigation titles -->
+    <string name="bottom_nav_title_qibla">Qibla</string>
+    <string name="bottom_nav_title_prayers">Prayers</string>
+    <string name="bottom_nav_title_mosques">Mosques</string>
+
+    <!-- For MainPrayerFragment Section 1 -->
+    <string name="placeholder_mosque_name">Grand Mosque Name</string>
+    <string name="label_next_prayer_in">Next Prayer In:</string>
+    <string name="placeholder_countdown">00:00:00</string>
+    <string name="placeholder_combined_date">1 Ramadan 1445 AH / 10 March 2024</string>
+    <string name="content_description_settings">Settings</string>
+    <string name="jummah_additional_info_placeholder">Jummah Info / Other Additional Info Placeholder</string>
+    <string name="donation_thank_you_message">Thank you for your support, %1$s!</string>
+    <string name="donation_thank_you_amount_message">Thank you for your $%1$d support, %2$s!</string>
+
+    <!-- Prayer Names -->
+    <string name="prayer_fajr">Fajr</string>
+    <string name="prayer_sunrise">Sunrise</string>
+    <string name="prayer_dhuhr">Dhuhr</string>
+    <string name="prayer_asr">Asr</string>
+    <string name="prayer_maghrib">Maghrib</string>
+    <string name="prayer_isha">Isha</string>
+
+
+</resources>

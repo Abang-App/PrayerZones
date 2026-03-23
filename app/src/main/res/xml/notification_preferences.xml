@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:title="Audio &amp; Voice Settings">
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- SLOT 1 (FAVORITE/NEAREST) AUDIO SETTINGS                         -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <PreferenceCategory
+        android:title="Slot 1 - Favorite Mosque"
+        android:summary="Your nearest or primary mosque">
+
+        <!-- Master enable switch for main screen notifications -->
+        <SwitchPreferenceCompat
+            android:key="pref_notifications_enabled"
+            android:title="Enable Main Screen Notification"
+            android:summaryOn="Slot1 Notifs are enabled"
+            android:summaryOff="Slot1 Notifs are disabled"
+            android:defaultValue="true"
+            android:icon="@android:drawable/ic_lock_silent_mode_off"
+            app:iconSpaceReserved="true" />
+
+        <!-- Main Slot Audio Style (Slot 1 only) -->
+        <ListPreference
+            android:key="pref_main_slot_audio_style"
+            android:title="Audio Style Notif &amp; Ann"
+            android:summary="%s"
+            android:entries="@array/main_slot_audio_style_entries"
+            android:entryValues="@array/main_slot_audio_style_values"
+            android:defaultValue="azan"
+            android:dependency="pref_notifications_enabled"
+            android:icon="@android:drawable/ic_lock_silent_mode_off"
+            app:iconSpaceReserved="true"
+            app:useSimpleSummaryProvider="true" />
+
+        <!-- Slot 1 Tone Selection -->
+        <ListPreference
+            android:key="pref_main_slot_tone"
+            android:title="Main Slot Tone"
+            android:summary="%s"
+            android:entries="@array/slot1_tone_entries"
+            android:entryValues="@array/slot1_tone_values"
+            android:defaultValue="tone1"
+            android:dependency="pref_notifications_enabled"
+            android:icon="@android:drawable/ic_media_play"
+            app:iconSpaceReserved="true"
+            app:useSimpleSummaryProvider="true" />
+
+        <!-- Volume control for Slot 1 -->
+        <SeekBarPreference
+            android:key="pref_slot1_volume"
+            android:title="Azan Volume"
+            android:summary="Adjust volume for Slot 1 audio"
+            android:max="100"
+            android:min="20"
+            android:defaultValue="80"
+            android:dependency="pref_notifications_enabled"
+            android:icon="@android:drawable/ic_lock_silent_mode_off"
+            app:iconSpaceReserved="true"
+            app:showSeekBarValue="true" />
+
+    </PreferenceCategory>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- SECONDARY MOSQUES (SLOTS 2-4) AUDIO SETTINGS                     -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <PreferenceCategory
+        android:title="Slots 2-4 - Secondary Mosques"
+        android:summary="Audio mode for non-favorite mosques">
+
+        <!-- Master enable for secondary slots (slots 2-4) -->
+        <SwitchPreferenceCompat
+            android:key="pref_secondary_notifications_enabled"
+            android:title="Enable Secondary Notifications"
+            android:summaryOn="Slot 2+ Notifs are enabled"
+            android:summaryOff="Slot 2+ Notifs are disabled"
+            android:defaultValue="true"
+            android:icon="@android:drawable/ic_menu_info_details"
+            app:iconSpaceReserved="true" />
+
+        <!-- Audio mode for secondary slots -->
+        <ListPreference
+            android:key="pref_secondary_audio_mode"
+            android:title="Audio Style Notif &amp; Ann"
+            android:summary="%s"
+            android:entries="@array/secondary_audio_entries"
+            android:entryValues="@array/secondary_audio_values"
+            android:defaultValue="tone"
+            android:dependency="pref_secondary_notifications_enabled"
+            android:icon="@android:drawable/ic_lock_silent_mode"
+            app:iconSpaceReserved="true"
+            app:useSimpleSummaryProvider="true" />
+
+        <!-- Secondary Slot Tone Selection -->
+        <ListPreference
+            android:key="pref_secondary_tone"
+            android:title="Secondary Slot Tone"
+            android:summary="%s"
+            android:entries="@array/secondary_tone_entries"
+            android:entryValues="@array/secondary_tone_values"
+            android:defaultValue="tone1"
+            android:dependency="pref_secondary_notifications_enabled"
+            android:icon="@android:drawable/ic_media_play"
+            app:iconSpaceReserved="true"
+            app:useSimpleSummaryProvider="true" />
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- TEXT-TO-SPEECH OPTIONS (NESTED CATEGORY)                     -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <PreferenceCategory
+            android:key="pref_tts_settings_category"
+            android:title="Text-to-Speech Options">
+
+            <!-- TTS Language -->
+            <ListPreference
+                android:key="pref_tts_language"
+                android:title="TTS Language"
+                android:summary="%s"
+                android:entries="@array/tts_language_entries"
+                android:entryValues="@array/tts_language_values"
+                android:defaultValue="en_US"
+                android:icon="@android:drawable/ic_menu_sort_alphabetically"
+                app:iconSpaceReserved="true"
+                app:useSimpleSummaryProvider="true" />
+
+            <!-- TTS Voice Picker (Deterministic) -->
+            <ListPreference
+                android:key="pref_tts_voice_name"
+                android:title="TTS Voice"
+                android:summary="%s"
+                android:defaultValue=""
+                android:enabled="false"
+                android:icon="@android:drawable/ic_btn_speak_now"
+                app:iconSpaceReserved="true"
+                app:useSimpleSummaryProvider="true" />
+
+            <!-- Deprecated: Voice Gender (kept for backward compatibility) -->
+            <ListPreference
+                android:key="pref_tts_voice_gender"
+                android:title="Voice Gender (Deprecated)"
+                android:summary="Not used"
+                android:entries="@array/tts_voice_entries"
+                android:entryValues="@array/tts_voice_values"
+                android:defaultValue="system"
+                app:iconSpaceReserved="true"
+                app:useSimpleSummaryProvider="false" />
+
+            <!-- TTS Speed -->
+            <SeekBarPreference
+                android:key="pref_tts_speed"
+                android:title="Speech Speed"
+                android:summary="Adjust how fast the voice speaks"
+                android:max="200"
+                android:min="50"
+                android:defaultValue="100"
+                android:icon="@android:drawable/ic_media_ff"
+                app:iconSpaceReserved="true"
+                app:showSeekBarValue="true" />
+
+            <!-- Install/Check voice data button -->
+            <Preference
+                android:key="pref_tts_install_voice_data"
+                android:title="Install/Check Voice Data"
+                android:summary="Opens Android Text-to-Speech settings"
+                android:icon="@android:drawable/ic_menu_manage"
+                app:iconSpaceReserved="true" />
+
+            <!-- Test TTS button -->
+            <Preference
+                android:key="pref_test_tts"
+                android:title="Test TTS"
+                android:summary="Hear a sample ann: 'Asr at Al-Azhar'"
+                android:icon="@android:drawable/ic_media_play"
+                app:iconSpaceReserved="true" />
+
+        </PreferenceCategory>
+
+    </PreferenceCategory>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- NOTIFICATION BEHAVIOR                                            -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <PreferenceCategory
+        android:title="Notification Behavior"
+        android:summary="How notifications appear">
+
+        <!-- Vibration -->
+        <SwitchPreferenceCompat
+            android:key="pref_vibrate_on_notification"
+            android:title="Vibrate"
+            android:summaryOn="Phone vibrates at prayer time"
+            android:summaryOff="No vibration"
+            android:defaultValue="true"
+            android:icon="@android:drawable/ic_lock_silent_mode"
+            app:iconSpaceReserved="true" />
+
+        <!-- Persistent notification -->
+        <SwitchPreferenceCompat
+            android:key="pref_persistent_notification"
+            android:title="Persistent Notification"
+            android:summaryOn="Notif stays until dismissed"
+            android:summaryOff="auto-dismisses after 30 seconds"
+            android:defaultValue="false"
+            android:icon="@android:drawable/ic_popup_reminder"
+            app:iconSpaceReserved="true" />
+
+        <!-- Show mosque name in notification -->
+        <SwitchPreferenceCompat
+            android:key="pref_show_mosque_in_notification"
+            android:title="Show Mosque Name in Notification"
+            android:summaryOn="Show mosque that fired alarm"
+            android:summaryOff="Notifs without mosque name"
+            android:defaultValue="true"
+            android:icon="@android:drawable/ic_dialog_map"
+            app:iconSpaceReserved="true" />
+
+        <!-- LED notification indicator (for devices that support it) -->
+        <SwitchPreferenceCompat
+            android:key="pref_notification_led"
+            android:title="LED Indicator"
+            android:summaryOn="LED blinks for notifs"
+            android:summaryOff="No LED indicator"
+            android:defaultValue="false"
+            android:icon="@android:drawable/ic_menu_view"
+            app:iconSpaceReserved="true" />
+
+    </PreferenceCategory>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- PRAYER MUTING                                                    -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <PreferenceCategory
+        android:title="Prayer Muting"
+        android:summary="Globally mute specific prayers">
+
+        <!-- Global Duha mute -->
+        <SwitchPreferenceCompat
+            android:key="pref_mute_duha"
+            android:title="Mute Duha Globally"
+            android:summaryOn="Duha is muted for all mosques"
+            android:summaryOff="Duha in notifs will playback"
+            android:defaultValue="false"
+            android:icon="@android:drawable/ic_lock_silent_mode"
+            app:iconSpaceReserved="true" />
+
+        <!-- Help tip for individual muting -->
+        <Preference
+            android:key="pref_individual_mute_help"
+            android:title="How to mute individual prayers?"
+            android:summary="Tap the bell icon on the main home screen prayer list."
+            android:icon="@android:drawable/ic_menu_help"
+            app:iconSpaceReserved="true" />
+
+    </PreferenceCategory>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- ADVANCED AUDIO SETTINGS                                          -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <PreferenceCategory
+        android:title="Advanced Audio"
+        android:summary="Expert settings">
+
+        <!-- Audio stream type -->
+        <ListPreference
+            android:key="pref_audio_stream"
+            android:title="Audio Stream Type"
+            android:summary="%s"
+            android:entries="@array/audio_stream_entries"
+            android:entryValues="@array/audio_stream_values"
+            android:defaultValue="alarm"
+            android:icon="@android:drawable/ic_lock_silent_mode_off"
+            app:iconSpaceReserved="true"
+            app:useSimpleSummaryProvider="true" />
+
+        <!-- Do Not Disturb override -->
+        <SwitchPreferenceCompat
+            android:key="pref_override_dnd"
+            android:title="Override Do Not Disturb"
+            android:summaryOn="DND Ignored (Requires perms)"
+            android:summaryOff="Respects system DND settings"
+            android:defaultValue="false"
+            android:icon="@android:drawable/ic_lock_silent_mode"
+            app:iconSpaceReserved="true" />
+
+        <!-- Attention tone before TTS -->
+        <SwitchPreferenceCompat
+            android:key="pref_attention_tone"
+            android:title="Play Attention Tone Before TTS"
+            android:summaryOn="Short beep before voice ann"
+            android:summaryOff="Voice directly without tone"
+            android:defaultValue="true"
+            android:icon="@android:drawable/ic_lock_silent_mode_off"
+            app:iconSpaceReserved="true" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

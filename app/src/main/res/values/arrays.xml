@@ -1,0 +1,191 @@
+<resources>
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- THEME OPTIONS                                                    -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <string-array name="theme_entries">
+        <item>Light Mode</item>
+        <item>Dark Mode</item>
+        <item>Follow System</item>
+    </string-array>
+    <string-array name="theme_values">
+        <item>light</item>
+        <item>dark</item>
+        <item>system</item>
+    </string-array>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- IN-MOSQUE MODE: PRAYER TIME WINDOW                              -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <string-array name="near_prayer_time_entries">
+        <item>10 mins</item>
+        <item>20 mins</item>
+        <item>25 mins</item>
+        <item>30 mins</item>
+        <item>45 mins</item>
+    </string-array>
+    <string-array name="near_prayer_time_values">
+        <item>10</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+        <item>45</item>
+    </string-array>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- IN-MOSQUE MODE: MINIMUM DISTANCE THRESHOLD                      -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <string-array name="min_distance_mosque_entries">
+        <item>25 m</item>
+        <item>50 m</item>
+        <item>100 m</item>
+        <item>150 m</item>
+        <item>840 m</item>
+    </string-array>
+    <string-array name="min_distance_mosque_values">
+        <item>25</item>
+        <item>50</item>
+        <item>100</item>
+        <item>150</item>
+        <item>840</item>
+    </string-array>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- IN-MOSQUE MODE: LOWER VOLUME PERCENTAGE                         -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <string-array name="lower_volume_percent_entries">
+        <item>5%</item>
+        <item>10%</item>
+        <item>15%</item>
+        <item>20%</item>
+        <item>25%</item>
+        <item>30%</item>
+    </string-array>
+    <string-array name="lower_volume_percent_values">
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+    </string-array>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- MAIN SLOT (SLOT 1) AUDIO OPTIONS                                 -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <string-array name="main_slot_audio_style_entries">
+        <item>Full Azan (MP3)</item>
+        <item>Short Tone</item>
+        <item>TTS Voice</item>
+    </string-array>
+    <string-array name="main_slot_audio_style_values">
+        <item>azan</item>
+        <item>tone</item>
+        <item>tts</item>
+    </string-array>
+
+    <!-- Slot 1 Tone Options -->
+    <string-array name="slot1_tone_entries">
+        <item>Soft Chime</item>
+        <item>Bell</item>
+        <item>Water Drop</item>
+    </string-array>
+    <string-array name="slot1_tone_values">
+        <item>tone1</item>
+        <item>tone2</item>
+        <item>tone3</item>
+    </string-array>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- SECONDARY SLOTS (2-4) AUDIO OPTIONS                              -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <string-array name="secondary_audio_entries">
+        <item>🔔 Short Tone</item>
+        <item>🗣️ TTS Voice</item>
+        <item>🔔 + 🗣️ Tone + TTS</item>
+    </string-array>
+    <string-array name="secondary_audio_values">
+        <item>tone</item>
+        <item>tts</item>
+        <item>tone_tts</item>
+    </string-array>
+
+    <!-- Secondary Slot Tone Options -->
+    <string-array name="secondary_tone_entries">
+        <item>Soft Chime</item>
+        <item>Bell</item>
+        <item>Water Drop</item>
+    </string-array>
+    <string-array name="secondary_tone_values">
+        <item>tone1</item>
+        <item>tone2</item>
+        <item>tone3</item>
+    </string-array>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- TTS OPTIONS                                                      -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <string-array name="tts_language_entries">
+        <item>English (US)</item>
+        <item>English (UK)</item>
+        <item>Arabic</item>
+        <item>Bengali</item>
+        <item>French</item>
+        <item>Hindi</item>
+        <item>Indonesian</item>
+        <item>Persian</item>
+        <item>Turkish</item>
+        <item>Urdu</item>
+    </string-array>
+    <string-array name="tts_language_values">
+        <item>en_US</item>
+        <item>en_GB</item>
+        <item>ar</item>
+        <item>bn</item>
+        <item>fr</item>
+        <item>hi</item>
+        <item>id</item>
+        <item>fa</item>
+        <item>tr</item>
+        <item>ur</item>
+    </string-array>
+
+    <string-array name="tts_voice_entries">
+        <item>System Default</item>
+        <item>Male Voice</item>
+        <item>Female Voice</item>
+    </string-array>
+    <string-array name="tts_voice_values">
+        <item>system</item>
+        <item>male</item>
+        <item>female</item>
+    </string-array>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- ADVANCED AUDIO OPTIONS                                           -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <string-array name="audio_stream_entries">
+        <item>🔔 Alarm Stream (Bypass Silent Mode)</item>
+        <item>📢 Notification Stream (Respect Silent Mode)</item>
+        <item>🎵 Media Stream (Music Volume)</item>
+    </string-array>
+    <string-array name="audio_stream_values">
+        <item>alarm</item>
+        <item>notification</item>
+        <item>media</item>
+    </string-array>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- FRIDAY PRAYER MODE                                               -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <string-array name="friday_mode_entries">
+        <item>Merge (Sync Times)</item>
+        <item>Split (Prioritize Jumu\'ah)</item>
+        <item>Split (Prioritize Dhuhr)</item>
+    </string-array>
+    <string-array name="friday_mode_values">
+        <item>merge</item>
+        <item>split_jumuah</item>
+        <item>split_dhuhr</item>
+    </string-array>
+
+</resources>
