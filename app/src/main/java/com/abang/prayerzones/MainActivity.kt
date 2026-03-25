@@ -120,7 +120,7 @@ class MainActivity : ComponentActivity() {
         // Show Thank You Toast properly
         Toast.makeText(
             this,
-            "Thank you $name for your $$amount donation!",
+            "Thank you $name for your $$amount support!",
             Toast.LENGTH_LONG
         ).show()
 
